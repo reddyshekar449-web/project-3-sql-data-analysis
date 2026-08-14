@@ -1,0 +1,65 @@
+ Project 3: SQL Data Analysis
+
+1. SELECT - View all records
+SELECT *
+FROM orders;
+
+2. WHERE - Filter completed orders
+SELECT *
+FROM orders
+WHERE c9 = 'Completed';
+
+ 3. ORDER BY - Highest Total Price first
+SELECT *
+FROM orders
+ORDER BY c14 DESC;
+
+4. COUNT - Count total orders
+SELECT COUNT(*) AS Total Orders
+FROM orders;
+
+ 5. SUM - Calculate total sales
+SELECT SUM(c14) AS Total Sales
+FROM orders;
+
+6. AVG - Calculate average order value
+SELECT AVG(c14) AS AverageOrderValue
+FROM orders;
+
+7. GROUP BY + SUM - Total sales by product
+SELECT c4 AS Product,
+       SUM(c14) AS Total Sales
+FROM orders
+GROUP BY c4;
+
+8. GROUP BY + COUNT - Number of orders by product
+SELECT c4 AS Product,
+       COUNT(*) AS NumberOfOrders
+FROM orders
+GROUP BY c4
+ORDER BY NumberOfOrders DESC;
+
+9. GROUP BY + AVG - Average order value by product
+SELECT c4 AS Product,
+       AVG(c14) AS AverageOrderValue
+FROM orders
+GROUP BY c4
+ORDER BY AverageOrderValue DESC;
+
+
+Final Key Figures                          
+Orders: 1,200
+Total Sales: 1,264,761.96                      
+Average Order Value: 1,053.97
+
+
+
+
+Key Observations
+
+The dataset contains 1,200 orders.
+Total sales amount to 1,264,761.96.
+The average order value is approximately 1,053.97.
+SQL filtering was used to identify completed orders.
+Product-level analysis was performed using GROUP BY.
+Products were compared based on total sales, number of orders, and average order value.
